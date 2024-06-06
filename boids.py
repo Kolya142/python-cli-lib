@@ -196,7 +196,7 @@ class Boid:
 
 
 # Initialize boids
-boids = [Boid(randint(0, cli.size[0]), randint(0, cli.size[1])) for _ in range(300)]
+boids = [Boid(randint(0, cli.size[0]), randint(0, cli.size[1])) for _ in range(200)]
 t = time.time()
 tree_show = False
 

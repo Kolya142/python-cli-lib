@@ -1,7 +1,8 @@
 # drawing - 0, test shader - 1, clock - 2, physics - 3, show-replay - 4, animation-maker - 5, pink-pong - 6, lakuar - 7
 # roguelike(FIXME) - 8
-# tech demo - 9(FIX), boids - 10, doors - 11, sand phys - 12, platformer - 13
-prog = 13
+# tech demo - 9(FIX), boids - 10, doors - 11, sand phys - 12, platformer - 13, generation - 14, shader-test1 - 15
+# shader-test2 - 16, lang - 17, bin - 18
+prog = 18
 
 match prog:
     case 0:
@@ -32,5 +33,15 @@ match prog:
         import sandphys
     case 13:
         import platformer
+    case 14:
+        import generation
+    case 15:
+        import test_shaders_1
+    case 16:
+        import test_shaders_2
+    case 17:
+        import klang
+    case 18:
+        import binlist
     case _:
         raise ValueError

@@ -180,7 +180,7 @@ camera.motion_speed_minus = 2
 camera.target_object = obj
 
 while True:
-    time.sleep(1 / 50)
+    time.sleep(0)
     cli.clear()
     for wall in walls:
         wall.render()

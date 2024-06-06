@@ -4,6 +4,8 @@ import pickle
 import time
 from typing import List, Callable, Dict, Tuple
 
+from vec import Vec3d
+
 if os.name == 'nt':
     import keyboard
     import win32api
@@ -116,6 +118,27 @@ def set_color_fg(x, y, r, g, b):
     if x < 0 or x >= size.columns or y < 0 or y >= size.lines:
         return
     screen_color_fg[y][x] = (r, g, b)
+
+
+@dataclasses.dataclass
+class Image:
+    image: list
+    color_fg: list
+    color_bg: list
+
+    def make_vec3(self):
+        for row in self.color_fg:
+            for index, color in enumerate(row):
+                row[index] = Vec3d.from_list(color)
+        for row in self.color_bg:
+            for index, color in enumerate(row):
+                row[index] = Vec3d.from_list(color)
+
+
+def grab_image():
+    img = Image(screen, screen_color_fg, screen_color_bg)
+    img.make_vec3()
+    return img
 
 
 def rect(x, y, w, h, c, fg, bg):
