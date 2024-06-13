@@ -2,7 +2,7 @@
 # roguelike(FIXME) - 8
 # tech demo - 9(FIX), boids - 10, doors - 11, sand phys - 12, platformer - 13, generation - 14, shader-test1 - 15
 # shader-test2 - 16, lang - 17, bin - 18
-prog = 18
+prog = 7
 
 match prog:
     case 0:
